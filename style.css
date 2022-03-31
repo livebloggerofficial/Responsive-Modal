@@ -1,0 +1,169 @@
+.modal-overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+
+  opacity: 0;
+  transition: all 400ms ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 10px));
+  z-index: 300;
+  background: #fff;
+  min-width: 550px;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 0 5px 26px -8px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  display: flex;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 400ms ease;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+}
+
+.modal .close-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.modal .left {
+  background: #242424;
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 17px 0 17px -8px rgba(0, 0, 0, 0.3);
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.modal .left h3 {
+  font-size: 22px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.modal .left h3.sale-text {
+  font-size: 36px;
+}
+
+.modal .left .discount p {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ebff00;
+  margin: 0;
+  margin-top: 32px;
+}
+
+.modal .left .discount .discount-percent {
+  font-size: 60px;
+  font-weight: 300;
+}
+
+.modal .right {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal .right h2 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+.modal .right p {
+  color: #222;
+}
+
+.modal .right .discount-btn {
+  text-decoration: none;
+  background: #ff5555;
+  align-self: flex-start;
+  padding: 8px 32px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.modal .bg-shape {
+  position: absolute;
+  height: 12px;
+  width: 40%;
+  background: linear-gradient(180deg, #04b6c1 0%, #0e8a91 100%);
+  border-radius: 20px 20px 0 0;
+  top: -12px;
+  left: 40%;
+}
+
+@media (max-width: 600px) {
+  .modal {
+    flex-direction: column;
+    min-width: 300px;
+  }
+
+  .modal .bg-shape {
+    display: none;
+  }
+
+  .modal .close-btn {
+    color: #eee;
+    right: 8px;
+    top: 8px;
+  }
+
+  .modal .left .discount-text {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .modal .left h3,
+  .modal .left h3.sale-text {
+    font-size: 24px;
+  }
+
+  .modal .left .discount p {
+    margin-top: 20px;
+  }
+
+  .modal .right {
+    padding: 24px;
+    text-align: center;
+  }
+
+  .modal .right h2 {
+    text-transform: none;
+  }
+
+  .modal .right h2 br {
+    display: none;
+  }
+
+  .modal .right .discount-btn {
+    align-self: auto;
+  }
+}
